@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
-const generateHTML = require('./lib/htmlReport')
+const generateHTML = require('./utils/htmlReport')
+const { rejects } = require('assert')
 
 const teamArr = []
 
@@ -95,4 +96,30 @@ if (confirmAddMember) {
 }
 }
 
+const writeToFile = data => {
+    fs.writeFile('./dist/imdex.html', data, err => {
+        if (err) {
+            rejects(err);
+            return;
+        } else {
+          resolve ({
+              ok: true,
+              message: 'Created Profile'
+          })
+        }
+    })
+}
 
+function init() {
+    return  inquirer.prompt(addEmployee)
+     .then(data => {
+         //Pass in Template
+         console.log(data)
+        return  addEmployee(data)
+     })
+     .then(generateHTML => {
+         return writeToFile(generateHTML)
+     })
+ }
+ 
+ init();
