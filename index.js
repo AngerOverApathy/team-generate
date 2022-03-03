@@ -27,14 +27,9 @@ const manager = () => {
         type: 'input',
         name: 'officeNumber',
         message: "What is the team manager's office number?",
-    },
-    {
-        type: 'input',
-        name: 'githubName',
-        message: "What is the team manager's github username?",
     }
    ])
-   
+
 }
 
 //engineer or intern questions  HOW TO DIRECT INETERN VS ENGINEER

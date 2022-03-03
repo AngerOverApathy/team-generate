@@ -24,6 +24,7 @@ const engineerProfile = function (engineer) {
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
                 <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="office">Office Number: ${engineer.officeNumber}</p>
                 <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
     </div>
@@ -40,6 +41,7 @@ const internProfile = function (intern) {
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
                 <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
+                <p class="office">Office Number: ${intern.officeNumber}</p>
                 <p class="school">School: ${intern.school}</p>
             </div>
     </div>
