@@ -1,7 +1,6 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 const generateHTML = require('./utils/htmlReport')
-const { rejects } = require('assert')
 
 const teamArr = []
 
@@ -35,6 +34,7 @@ const manager = () => {
         message: "What is the team manager's github username?",
     }
    ])
+   
 }
 
 //engineer or intern questions  HOW TO DIRECT INETERN VS ENGINEER
@@ -113,8 +113,6 @@ const writeToFile = data => {
 function init() {
     return  inquirer.prompt(addEmployee)
      .then(data => {
-         //Pass in Template
-         console.log(data)
         return  addEmployee(data)
      })
      .then(generateHTML => {
