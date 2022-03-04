@@ -14,7 +14,6 @@ test('gets employee name', () => {
     expect(employee.nameInput()).toEqual(expect.any(String));
 });
 
-// gets id from getId() 
 test('gets employee ID', () => {
     const employee = new Employee('Mark', 75, 'markymark@gmail.com');
 
@@ -27,7 +26,6 @@ test('gets employee email', () => {
     expect(employee.emailInput()).toEqual(expect.stringContaining(employee.email.toString()));
 });
 
-// gets role from getRole()
 test('gets role of employee', () => {
     const employee = new Employee('Mark', 75, 'markymark@gmail.com');
 
