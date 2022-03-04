@@ -4,7 +4,7 @@ const generateHTML = require('./utils/htmlReport')
 
 const teamArr = []
 
-//team manager questions//
+//team manager questions
 const manager = () => {
     return inquirer.prompt (
  [
@@ -92,7 +92,7 @@ if (confirmAddMember) {
 }
 
 const writeToFile = data => {
-    fs.writeFile('./dist/imdex.html', data, err => {
+    fs.writeFile('./dist/index.html', data, err => {
         if (err) {
             rejects(err);
             return;
@@ -108,7 +108,7 @@ const writeToFile = data => {
 function init() {
     return  inquirer.prompt(addEmployee)
      .then(data => {
-        return  addEmployee(data)
+        return addEmployee(data)
      })
      .then(generateHTML => {
          return writeToFile(generateHTML)

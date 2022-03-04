@@ -1,3 +1,4 @@
+const { test } = require('jest')
 const Employee = require('./lib/Employees')
 
 test('creates an employee object', () => {
