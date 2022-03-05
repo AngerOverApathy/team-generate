@@ -2,7 +2,16 @@ const inquirer = require('inquirer')
 const fs = require('fs')
 const generateHTML = require('./utils/htmlReport')
 
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
+const Engineer = require('./lib/Engineer');
+const BottomBar = require('inquirer/lib/ui/bottom-bar');
+
+const {managerProfile, engineerProfile, internProfile} = generateHTML
+
 const teamArr = []
+
+function start() {
 
 //team manager questions
 const manager = () => {
@@ -29,6 +38,11 @@ const manager = () => {
         message: "What is the team manager's office number?",
     }
    ])
+   .then(res => {
+        const manager = new Manager(res.name, res.id, res.email, res.officeNumber);
+        teamArr.push(manager);
+        addEmployee();
+   })
 
 }
 
@@ -40,7 +54,7 @@ const addEmployee = () => {
         type: 'list',
         name: 'role',
         message: "Please select the employee role",
-        choice: ['Engineer, Intern']
+        choices: ['Engineer','Intern']
      },
     {
         type: 'input',
@@ -59,11 +73,6 @@ const addEmployee = () => {
     },
     {
         type: 'input',
-        name: 'officeNumber',
-        message: "What is the employee's office number?",
-    },
-    {
-        type: 'input',
         name: 'githubName',
         message: "What is the employee's github username?",
         when: (input) => input.role === 'Engineer'
@@ -73,46 +82,89 @@ const addEmployee = () => {
         name: 'school',
         message: "Please enter the intern's school",
         when: (input) => input.role === 'Intern'
-    },
-    {
-        type: 'confirm',
-        name: 'addMember',
-        message: 'Would you like to add more team members?',
-        default: false
     }
    ])
+   .then(res => {
+    if(res.role === 'Intern') {
+        const intern = new Intern(res.name, res.id, res.email, res.school);
+        teamArr.push(intern);
+    } else if (res.role === 'Engineer') {
+        const engineer = new Engineer(res.name, res.id, res.email, res.githubName)
+        teamArr.push(engineer);
+    }
+    addTeamMember()
+   })
 }
 
-function newMember() {
-if (confirmAddMember) {
-    return addEmployee(teamArr)
-} else {
-    return teamArr
-}
-}
-
-const writeToFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
-        if (err) {
-            rejects(err);
-            return;
+function addTeamMember () {
+    return inquirer.prompt([
+     {
+         type: 'confirm',
+         name: 'addMember',
+         message: 'Would you like to add more team members?',
+         default: false
+     }
+    ])
+    .then(res=> {
+        if(res.addMember == true) {
+            addEmployee()
         } else {
-          resolve ({
-              ok: true,
-              message: 'Created Profile'
-          })
+            writeToFile(teamArr);
         }
+     })
+ }
+ manager();
+}
+
+const writeToFile = writeHTML => {
+    let generatedHTML = htmlBuilder(writeHTML)
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/index.html', generatedHTML, err => {
+        if(err) {
+            reject(err);
+            return;
+        } resolve ({
+            ok: true,
+            message:'Created HTML'
+        })
+    })
     })
 }
 
-function init() {
-    return  inquirer.prompt(addEmployee)
-     .then(data => {
-        return addEmployee(data)
-     })
-     .then(generateHTML => {
-         return writeToFile(generateHTML)
-     })
- }
- 
- init();
+function htmlBuilder (userInput) {
+    let topHtml = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Generate</title>
+    </head>
+    <body>
+    `
+
+    let bottomHtml = `
+     </body>
+     </html>
+     `
+
+for (let i = 0; i < userInput.length; i++) {
+    switch (userInput[i].constructor.name) {
+        case 'Manager':
+            topHtml += managerProfile(userInput[i]);
+            break;
+        case 'Engineer':
+            topHtml += engineerProfile(userInput[i]);
+            break;
+        case 'Intern' :
+            topHtml += internProfile(userInput[i]);
+            break;
+        default:
+            break;
+    }
+} 
+return topHtml + bottomHtml
+}
+
+
+start();

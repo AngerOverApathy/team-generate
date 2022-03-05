@@ -1,5 +1,11 @@
-const managerProfile = function (manager) {
+const htmlReport = 
+{
+managerProfile: function (manager) {
+
+    console.log('html manager')
     return `
+
+    
     <div class="col-4 mt-4 card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
@@ -12,9 +18,10 @@ const managerProfile = function (manager) {
             </div>
     </div>
     `;
-}
+},
 
-const engineerProfile = function (engineer) {
+engineerProfile: function (engineer) {
+    console.log('engineer html')
     return `
     <div class="col-4 mt-4 card h-100">
             <div class="card-header">
@@ -29,9 +36,10 @@ const engineerProfile = function (engineer) {
             </div>
     </div>
     `
-}
+},
 
-const internProfile = function (intern) {
+internProfile: function (intern) {
+    console.log('intern html')
     return `
     <div class="col-4 mt-4 card h-100">
             <div class="card-header">
@@ -46,4 +54,8 @@ const internProfile = function (intern) {
             </div>
     </div>
     `
-};
+}
+
+}
+
+module.exports = htmlReport;
