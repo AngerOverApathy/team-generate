@@ -3,33 +3,23 @@
 }
 
 :root {
-    --primary: lightslategray;
-    --secondary: white;
+    --primary: rgb(90, 211, 161);
+    --secondary: rgb(158, 219, 150);
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#navbar {
-    background-color: var(--primary);
-    color: var(--secondary);
-    font-size: 50px;
-}
-
-.navbar-brand {
-    font-size: 50px;
-}
-
 
 .card-header {
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--primary) !important;
+    color: white;
 }
 
 .card-body {
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--secondary) !important;
+    color: white;
 }
 
 .container {
@@ -37,4 +27,37 @@ body {
     justify-content: space-evenly;
     display: flex;
     
+}
+
+.jumbotron {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: rgb(90, 211, 161);
+}
+
+/* #banner {
+    text-align: center !important;
+    width: 100% !important;
+    height: 20px !important;
+} */
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+h1#title {
+    text-align: center !important;
+    color: white !important;
+    font-size: 30px !important;
+    font-weight: 900 !important;
+}
+
+#card-color {
+    background-color: var(--primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary)!important;
 }
