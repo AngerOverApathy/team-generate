@@ -1,13 +1,17 @@
 const Intern = require('../lib/Intern.js')
 
-// test('creates intern object', () => {
-//     const intern = new Intern('Bill', 666, 'bill@gmail.com', 'UC Davis');
+test('creates intern object', () => {
+    const intern = new Intern('Bill', 666, 'bill@gmail.com', 'UC Davis');
+    expect(typeof(intern)).toBe('object')
+});
 
-//     expect(intern.school).toEqual(expect.any(String))
-// });
+test('gets school value value', () => {
+    const school = 'UC Davis'
+    const intern = new Intern('Bill', 666, 'bill@gmail.com', school);
+    expect(intern.school).toEqual(school);
+});
 
-// test('get employee status', () => {
-//     const intern = new Intern('Bill', 666, 'bill@gmail.com', 'UC Davis');
-
-//     expect(intern.stateRole()).toEqual("Intern");
-// }); 
+test('get employee status', () => {
+    const intern = new Intern('Bill', 666, 'bill@gmail.com', 'UC Davis');
+    expect(intern.stateRole()).toEqual("Intern");
+}); 
