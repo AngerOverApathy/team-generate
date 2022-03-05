@@ -5,7 +5,7 @@ managerProfile: function (manager) {
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-                <div class="card text-white bg-primary mb-3" style="max-width: 20rem">
+                <div class="card text-dark bg-info mb-3" style="max-width: 20rem">
                     <div class="card-header">Manager</div>
 
                         <div class="card-body">
@@ -29,7 +29,7 @@ engineerProfile: function (engineer) {
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-                <div class="card text-white bg-primary mb-3" style="max-width: 20rem">
+                <div class="card text-dark bg-info mb-3" style="max-width: 20rem">
                     <div class="card-header">Engineer</div>
 
                         <div class="card-body">
@@ -52,7 +52,7 @@ internProfile: function (intern) {
 <div class="container>
     <div class="row">
         <div class="col-sm-4">
-                <div class="card text-white bg-primary mb-3" style="max-width: 20rem">
+                <div class="card text-dark bg-info mb-3" style="max-width: 20rem">
                     <div class="card-header">Engineer</div>
 
                         <div class="card-body">
