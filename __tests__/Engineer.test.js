@@ -14,4 +14,4 @@ test('gets engineer github value', () => {
 test('gets employee status', () => {
     const engineer = new Engineer('Jane', 505, 'jane@gmail.com', 'webdevjane');
     expect(engineer.stateRole()).toEqual("Engineer");
-});
+}); 
