@@ -14,11 +14,13 @@
 A team profile generator that makes it easy to compile employee and manager information. You have the option of selecting between Intern or Engineer after filling out the Manager card. Add as many employees as you'd like! 
 
 
+<br/>
 <a name="link"/>
 ## Link
 https://angeroverapathy.github.io/team-generate/
 
 
+<br/>
 <a name="features"/>
 ## Features
 Questions asked in generator:
@@ -30,6 +32,7 @@ The browser:
 
 
 
+<br/>
 <a name="usage"/>
 ## Usage
 A video demo:
@@ -39,7 +42,7 @@ https://user-images.githubusercontent.com/92872122/156905321-b356cdc6-b011-4149-
 
 
 
-
+<br/>
 <a name="questions"/>
 ## Questions? Reach Out
 Github: https://github.angeroverapathy.com
