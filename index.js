@@ -145,8 +145,8 @@ function htmlBuilder (userInput) {
 
     </head>
     <body>
-    <div class="jumbotron" id="banner">
-    <h1 class="display-4" id="title">Team Profile</h1>
+    <div class="jumbotron" id="banner" style="background-color: rgb(90, 211, 161)">
+    <h1 class="display-4 font-weight-bold text-center" id="title">Team Profile</h1>
     </div>
     `
 
