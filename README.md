@@ -15,8 +15,7 @@ A team profile generator that makes it easy to compile employee and manager info
 
 
 <br/>
-<a name="link"/>
-### Link
+### Link <a name="link"/>
 https://angeroverapathy.github.io/team-generate/
 
 
