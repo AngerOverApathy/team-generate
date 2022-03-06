@@ -7,6 +7,8 @@
 4. [Usage](#useage)
 5. [Questions](#questions)
 
+<br/>
+
 <a name="description"/>
 ## Description 
 A team profile generator that makes it easy to compile employee and manager information. You have the option of selecting between Intern or Engineer after filling out the Manager card. Add as many employees as you'd like! 
