@@ -31,7 +31,6 @@ engineerProfile: function (engineer) {
         <div class="col-sm-4">
                 <div class="card text-dark mb-3" style="background-color: rgb(166, 222, 180)">
                     <div class="card-header">Engineer</div>
-
                         <div class="card-body">
                         <h4 class="card-title">${engineer.name}</h4>
                         <p class="card-text">
@@ -49,14 +48,13 @@ engineerProfile: function (engineer) {
 
 internProfile: function (intern) {
     return `
-<div class="container>
+<div class="container">
     <div class="row">
         <div class="col-sm-4">
                 <div class="card text-dark mb-3" style="background-color: rgb(166, 222, 180)">
-                    <div class="card-header">Engineer</div>
-
+                    <div class="card-header">Intern</div>
                         <div class="card-body">
-                        <h4 class="card-title">${engineer.name}</h4>
+                        <h4 class="card-title">${intern.name}</h4>
                         <p class="card-text">
                         <p class="id">ID: ${intern.id}</p>
                         <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
@@ -67,6 +65,7 @@ internProfile: function (intern) {
              </div>
         </div>
     </div>
+</div>
     `;
 }
 }
