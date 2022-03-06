@@ -14,11 +14,13 @@ A team profile generator that makes it easy to compile employee and manager info
 
 
 <br/>
+
 ## Link <a name="link"/>
 https://angeroverapathy.github.io/team-generate/
 
 
 <br/>
+
 ## Features <a name="features"/>
 Questions asked in generator:
 ![questions](https://user-images.githubusercontent.com/92872122/156905312-ef99e181-84ea-4e40-9845-db9c9321b891.png)
@@ -30,8 +32,7 @@ The browser:
 
 
 <br/>
-<a name="usage"/>
-## Usage
+## Usage <a name="usage"/>
 A video demo:
 
 https://user-images.githubusercontent.com/92872122/156905321-b356cdc6-b011-4149-9e8b-835d3fbff2b1.mp4
